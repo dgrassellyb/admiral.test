@@ -16,6 +16,7 @@ on:
       - devel
       - pre-release
       - test
+      - fix-containers
   # 'pull_request' events are triggered when PRs are
   # created against one of these target branches.
   pull_request:
@@ -64,7 +65,7 @@ jobs:
   check:
     name: Check
     uses: pharmaverse/admiralci/.github/workflows/r-cmd-check.yml@main
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'push'
   docs:
     name: Documentation
     uses: pharmaverse/admiralci/.github/workflows/pkgdown.yml@main
